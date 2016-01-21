@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+
+
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'CustomViews'
+//    
+    publishedGroupId = 'com.ammyaman'
+    libraryName = 'CustomViews'
+    artifact = 'CustomViews'
+
+    libraryDescription = 'A wrapper library to give access to put fonts from xml file'
+
+    siteUrl = 'https://github.com/AmanChugh/CustomViews'
+    gitUrl = 'https://github.com/AmanChugh/CustomViews.git'
+
+    libraryVersion = '0.9.3'
+
+    developerId = 'ammyaman'
+    developerName = 'Aman Deep'
+    developerEmail = 'amanarora0806@yahoo.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+}
